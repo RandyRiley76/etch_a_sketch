@@ -20,7 +20,7 @@ function tracer(){
 }
 
 $(document).ready(function(){
-  $('#surface').css({'background-color':'#CCC', 'width': surfaceSize+'px', 'margin':'auto'});
+  $('#surface').css({'width': surfaceSize+'px', 'margin':'auto'});
   makeGrid(squarePerLine);
   tracer();
   //Clear Screen
@@ -35,8 +35,8 @@ $(document).ready(function(){
   });
   //Change Grid
   $('#grid').on('click', function(){
-    squarePerLine = prompt("Enter a number between 2 and 30 for how many squares per line", "30");
-    if(squarePerLine < 2 || squarePerLine > 30){
+    squarePerLine = prompt("Enter a number between 2 and 64 for how many squares per line", "30");
+    if(squarePerLine < 2 || squarePerLine > 64 || /[^0-9]/.test(squarePerLine)){
       squarePerLine = prompt("Enter a number between 2 and 30 for how many squares per line", "30");
     }
     $('.sketch_square').remove();
