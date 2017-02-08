@@ -13,23 +13,27 @@ h1{
   text-shadow: 5px 5px 5px #222;
 }
 h3 {
+	margin: 0 10px;
   display: inline-block;
   color : white;
 }
-button{
+button, select{
   margin: 10px;
 }
 #surface{
   position: relative;
+	height: 500px;
+	width: 500px;
+	padding: 5px;
+	border-radius: 15px;
+	background-color: #CCC;
+	box-shadow: -5px -5px 5px darkRed;
 
 }
 .sketch_square{
 	background-color: #CCC;
-  /*display: inline-block;
-  width: 30px;
-  height: 30px;*/
 	float: left;
-  border: 1px dotted #333;
+  border: 1px dotted #777;
   margin: 0 0 0 0;
   padding: 0px;
   font-size:0;

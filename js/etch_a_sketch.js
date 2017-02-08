@@ -12,14 +12,22 @@ function makeGrid(squarePerLine){
   $('.sketch_square').css({'height': squareSize+'px', 'width': squareSize+'px'});
 }
 
-function tracer(){
-  //Darken Squares
-  $('.sketch_square').on('mouseenter', function(){
-    $(this).addClass("blacken");
-  });
-}
+
 
 $(document).ready(function(){
+//
+  var traceColor = $('#color').val();
+  $("#color").change(function(){
+    traceColor = $('#color').val();
+    console.log("traceColor " + traceColor);
+  });
+
+  function tracer(){
+    $('.sketch_square').on('mouseenter', function(){
+      $(this).css({'background-color': traceColor})
+    });
+  }
+  //Make Grid
   $('#surface').css({'width': surfaceSize+'px', 'margin':'auto'});
   makeGrid(squarePerLine);
   tracer();
@@ -28,7 +36,8 @@ $(document).ready(function(){
     $('#surface').animate({'left': '-40px'}, 75,function(){
       $('#surface').animate({'left': '80px'},75, function(){
         $('#surface').animate({'left': '0px'}, 150, function(){
-          $('.sketch_square').removeClass("blacken");
+          //$('.sketch_square').removeClass("blacken");
+          $('.sketch_square').css({'background-color': '#CCC'})
         });
       });
     });
